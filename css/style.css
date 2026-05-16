@@ -668,6 +668,18 @@ body::before {
     width: auto;
   }
   .hero-title { font-size: 2.5rem; }
+  .about-grid,
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .about-copy,
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+  .contact-info {
+    padding: 1.5rem;
+  }
   .footer-top {
     display: block;
     gap: 2rem;
