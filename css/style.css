@@ -110,6 +110,24 @@ body::before {
   transition: padding 0.25s ease;
 }
 
+/* Keep header height stable while allowing a larger logo image */
+.logo {
+  display: block;
+  width: 2.5rem; /* reserve original space in the flow */
+  height: 2.5rem;
+  position: relative;
+}
+
+.logo-img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6rem; /* visually larger without affecting header height */
+  width: auto;
+  display: block;
+}
+
 .header.header--compact {
   background: rgba(7, 18, 36, 0.98);
   box-shadow: 0 15px 40px -24px rgba(0, 0, 0, 0.52);
@@ -120,7 +138,7 @@ body::before {
 }
 
 .logo-img {
-  height: 2.5rem;
+  height: 6.5rem;
   width: auto;
 }
 
@@ -307,12 +325,16 @@ body::before {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.86);
-  border-radius: 18px;
-  padding: 2rem 1.75rem;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.08);
+  background: #0b1220;
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
   transition: var(--transition);
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
 }
 
 .card-icon {
@@ -321,29 +343,52 @@ body::before {
   display: grid;
   place-items: center;
   margin-bottom: 1rem;
-  border-radius: 16px;
-  background: rgba(59, 130, 246, 0.12);
-  color: #2563eb;
-  font-size: 1.7rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5ff 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 1.35rem;
+  flex-shrink: 0;
 }
 
 .card h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: var(--text-light);
+  color: #ffffff;
 }
 
 .card p {
-  color: var(--muted-alt);
+  color: rgba(255,255,255,0.88);
   font-size: 0.95rem;
-  line-height: 1.8;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary-light);
-  box-shadow: 0 0 30px var(--primary-glow), 0 10px 20px rgba(15, 23, 42, 0.22);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.5);
+  border-color: rgba(59,130,246,0.18);
+  transform: translateY(-8px) scale(1.002);
+}
+
+/* soft glowing border effect on hover */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 18px;
+  pointer-events: none;
+  transition: opacity 0.14s ease, transform 0.14s ease, box-shadow 0.14s ease, border 0.14s ease;
+  opacity: 0;
+  box-shadow: 0 0 0 rgba(59,130,246,0);
+  border: 1px solid transparent;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transform: scale(1.02);
+  /* sharp, vivid glow (minimal blur + strong color) */
+  box-shadow: 0 0 6px rgba(59,130,246,0.96), 0 0 12px rgba(59,130,246,0.85), 0 0 22px rgba(59,130,246,0.6);
+  border: 1px solid rgba(59,130,246,0.92);
 }
 
 .partners {
