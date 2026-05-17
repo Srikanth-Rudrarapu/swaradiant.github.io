@@ -24,13 +24,28 @@
       }
 
       if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // use header offset-aware scroll to avoid leaving a sliver of the previous section
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const extraOffset = 12; // small breathing room
+        const top = targetSection.getBoundingClientRect().top + window.scrollY - (headerHeight + extraOffset);
+        window.scrollTo({ top, behavior: 'smooth' });
         history.pushState(null, '', targetId);
       }
     });
   });
 
   if (sections.length && navLinks.length) {
+    // compute header-aware rootMargin so the observed intersection aligns with visible area
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const topMargin = headerHeight + 12; // add small gap
+
+    // set scroll-margin-top on sections so native anchor scrolling respects header
+    sections.forEach((section) => {
+      section.style.scrollMarginTop = `${topMargin}px`;
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,12 +60,22 @@
       },
       {
         root: null,
-        rootMargin: '-30% 0px -55% 0px',
-        threshold: 0.2,
+        // top margin accounts for sticky header so the section is considered 'in view' when below header
+        rootMargin: `-${topMargin}px 0px -40% 0px`,
+        threshold: 0.25,
       }
     );
 
     sections.forEach((section) => observer.observe(section));
+
+    // update margins on resize since header height can change (compact state)
+    window.addEventListener('resize', () => {
+      const h = header ? header.offsetHeight : 0;
+      const tm = h + 12;
+      sections.forEach((section) => {
+        section.style.scrollMarginTop = `${tm}px`;
+      });
+    });
   }
 
   // Header compact state on scroll
