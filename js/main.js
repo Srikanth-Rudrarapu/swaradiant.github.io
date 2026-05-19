@@ -29,6 +29,8 @@ window.addEventListener("scroll", () => {
   });
 });
 
+
+
 // GSAP HERO ANIMATION
 
 gsap.from(".hero-badge",{
@@ -138,4 +140,17 @@ form.addEventListener("submit", (e) => {
 
   alert("Form submitted successfully!");
   form.reset();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileNav = document.getElementById("navLinks");
+
+  if(menuToggle && mobileNav){
+    menuToggle.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+    });
+  }
+
 });
