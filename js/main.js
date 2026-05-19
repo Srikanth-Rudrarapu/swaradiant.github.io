@@ -1,121 +1,141 @@
-(() => {
-  // Navigation Toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+// ACTIVE NAVBAR
 
-  if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  }
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
 
-  navLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetId = event.currentTarget.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
+window.addEventListener("scroll", () => {
 
-      navLinks.forEach((item) => item.classList.remove('active'));
-      event.currentTarget.classList.add('active');
-      if (nav.classList.contains('active')) {
-        nav.classList.remove('active');
-      }
+  let current = "";
 
-      if (targetSection) {
-        // use header offset-aware scroll to avoid leaving a sliver of the previous section
-        const header = document.querySelector('.header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const extraOffset = 12; // small breathing room
-        const top = targetSection.getBoundingClientRect().top + window.scrollY - (headerHeight + extraOffset);
-        window.scrollTo({ top, behavior: 'smooth' });
-        history.pushState(null, '', targetId);
-      }
-    });
+  sections.forEach((section) => {
+
+    const sectionTop = section.offsetTop;
+
+    if(scrollY >= sectionTop - 200){
+      current = section.getAttribute("id");
+    }
   });
 
-  if (sections.length && navLinks.length) {
-    // compute header-aware rootMargin so the observed intersection aligns with visible area
-    const header = document.querySelector('.header');
-    const headerHeight = header ? header.offsetHeight : 0;
-    const topMargin = headerHeight + 12; // add small gap
+  navLinks.forEach((link) => {
 
-    // set scroll-margin-top on sections so native anchor scrolling respects header
-    sections.forEach((section) => {
-      section.style.scrollMarginTop = `${topMargin}px`;
-    });
+    link.classList.remove("active");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const activeId = entry.target.id;
-            navLinks.forEach((link) => {
-              const linkHash = link.getAttribute('href');
-              link.classList.toggle('active', linkHash === `#${activeId}`);
-            });
-          }
-        });
-      },
-      {
-        root: null,
-        // top margin accounts for sticky header so the section is considered 'in view' when below header
-        rootMargin: `-${topMargin}px 0px -40% 0px`,
-        threshold: 0.25,
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    // update margins on resize since header height can change (compact state)
-    window.addEventListener('resize', () => {
-      const h = header ? header.offsetHeight : 0;
-      const tm = h + 12;
-      sections.forEach((section) => {
-        section.style.scrollMarginTop = `${tm}px`;
-      });
-    });
-  }
-
-  // Header compact state on scroll
-  const header = document.querySelector('.header');
-  const compactThreshold = 40;
-
-  const updateHeaderState = () => {
-    if (!header) return;
-    if (window.scrollY > compactThreshold) {
-      header.classList.add('header--compact');
-    } else {
-      header.classList.remove('header--compact');
+    if(
+      link.getAttribute("href")
+      === `#${current}`
+    ){
+      link.classList.add("active");
     }
-  };
+  });
+});
 
-  updateHeaderState();
-  window.addEventListener('scroll', updateHeaderState, { passive: true });
+// GSAP HERO ANIMATION
 
-  // Functional Privacy & Compliance Modal Logic
-  const openBtn = document.getElementById('open-privacy');
-  const closeBtn = document.getElementById('close-privacy');
-  const modal = document.getElementById('privacy-modal');
+gsap.from(".hero-badge",{
+  y:30,
+  opacity:0,
+  duration:1
+});
 
-  if (openBtn && closeBtn && modal) {
-    openBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
+gsap.from(".hero-title",{
+  y:60,
+  opacity:0,
+  duration:1,
+  delay:0.2
+});
 
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+gsap.from(".hero-text",{
+  y:40,
+  opacity:0,
+  duration:1,
+  delay:0.4
+});
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+gsap.from(".hero-buttons",{
+  y:40,
+  opacity:0,
+  duration:1,
+  delay:0.6
+});
+
+gsap.from(".glass-card",{
+  x:100,
+  opacity:0,
+  duration:1.4,
+  delay:0.5
+});
+
+// REVEAL ON SCROLL
+
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+
+},{
+  threshold:0.2
+});
+
+document
+  .querySelectorAll(".reveal")
+  .forEach((el)=>observer.observe(el));
+
+
+const form = document.getElementById("contactForm");
+
+const nameRegex = /^[A-Za-z\s'-]{2,50}$/;
+const emailRegex = /^[a-z0-9]+([._%+-]?[a-z0-9]+)*@[a-z0-9-]+\.[a-z]{2,}$/;
+const safeTextRegex = /^[A-Za-z0-9\s.,'-]{20,1000}$/;
+
+function sanitize(input) {
+  return input
+    .replace(/</g, "")
+    .replace(/>/g, "")
+    .replace(/{/g, "")
+    .replace(/}/g, "")
+    .replace(/\[/g, "")
+    .replace(/\]/g, "")
+    .trim();
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = sanitize(document.getElementById("name").value);
+  const email = sanitize(document.getElementById("email").value.toLowerCase());
+  const company = sanitize(document.getElementById("company").value);
+  const message = sanitize(document.getElementById("message").value);
+
+  if (!nameRegex.test(name)) {
+    alert("Invalid name format");
+    return;
   }
-})();
+
+  if (!emailRegex.test(email)) {
+    alert("Invalid email format");
+    return;
+  }
+
+  if (!safeTextRegex.test(message)) {
+    alert("Message must be 20–1000 safe characters only");
+    return;
+  }
+
+  const dangerPatterns = [/script/i, /select/i, /drop/i, /insert/i];
+
+  for (let pattern of dangerPatterns) {
+    if (pattern.test(name + email + message)) {
+      alert("Unsafe input detected");
+      return;
+    }
+  }
+
+  console.log({ name, email, company, message });
+
+  alert("Form submitted successfully!");
+  form.reset();
+});
