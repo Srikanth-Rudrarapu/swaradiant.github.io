@@ -109,8 +109,29 @@ body {
     text-align: center;
   }
 
-  .nav-links {
-    display: none; /* replace later with hamburger menu */
+    .nav-links{
+    position:absolute;
+
+    top:80px;
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    padding:30px 0;
+
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+
+    display:none;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.show{
+    display:flex;
   }
 }
 
