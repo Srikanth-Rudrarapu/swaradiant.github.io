@@ -1,200 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SWA Radiant | Enterprise IT Consulting</title>
-  <meta name="description" content="SWA Radiant provides professional IT consulting, cloud strategy, and cybersecurity services for businesses worldwide." />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <title>Swaradiant | IT Consulting & Outsourcing</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
+
 <body>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
 
-  <header class="header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        <img src="assets/logo.png" alt="SWA Radiant" class="logo-img" />
-      </a>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#home" class="nav-link active"><strong>Home</strong></a</li>
-          <li><a href="#services" class="nav-link"><strong>Services</strong></a></li>
-          <li><a href="#about" class="nav-link"><strong>About</strong></a></li>
-          <li><a href="#contact" class="nav-link"><strong>Contact</strong></a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle">☰</button>
+<!-- NAV -->
+<header class="header">
+  <div class="container navbar">
+
+    <div class="logo">
+      <img src="./assets/images/logo.svg" alt="logo" class="logo-img" />
     </div>
-  </header>
 
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="hero-copy">
-        <p class="eyebrow">Enterprise IT Consulting & Cloud Strategy</p>
-        <h1 class="hero-title">
-          <span class="highlight">SWA Radiant</span> <br> Designs modern technology systems for scalable growth.
-        </h1>
-        <p class="hero-subtitle">
-          We accelerate secure digital transformation for ambitious organizations with infrastructure, apps, and compliance built for the future.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
-          <a href="#services" class="btn btn-secondary">Explore Services</a>
-        </div>
-  </section>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
 
-  <section id="services" class="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services-grid">
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>IT Strategy & Consulting</h3>
-          <p>Align your technology roadmap with business goals for long‑term growth.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">☁️</div>
-          <h3>Cloud & DevOps</h3>
-          <p>Modern cloud architecture, CI/CD pipelines, and scalable infra setup.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💻</div>
-          <h3>Web & App Development</h3>
-          <p>Clean, responsive websites and robust web/mobile applications.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛡️</div>
-          <h3>Cybersecurity & Compliance</h3>
-          <p>Secure systems, data protection, and regulatory compliance audits.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</header>
 
+<!-- HERO -->
+<section id="home" class="hero section">
 
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About SWA Radiant</h2>
-      <div class="about-grid">
-        <div class="about-copy">
-          <p>
-            SWA Radiant is a professional IT consulting firm focused on delivering scalable, secure, and future‑ready technology solutions to businesses of all sizes.
-          </p>
-          <p>
-            With a team of experienced engineers and architects, we help our clients modernize legacy systems, adopt cloud technologies, and streamline operations through tailored software and automation.
-          </p>
-        </div>
-        <div class="about-highlights">
-          <div class="feature-pill">
-            <span class="feature-icon">⚙️</span>
-            <div class="feature-text">
-              <h3>Strategic Engineering</h3>
-              <p>Aligning technical execution with measurable business outcomes.</p>
-            </div>
-          </div>
-          <div class="feature-pill">
-            <span class="feature-icon">🌐</span>
-            <div class="feature-text">
-              <h3>Global Cloud Enablement</h3>
-              <p>Secure, resilient platform design for distributed enterprise teams.</p>
-            </div>
-          </div>
-          <div class="feature-pill">
-            <span class="feature-icon">🔒</span>
-            <div class="feature-text">
-              <h3>Compliance-driven Delivery</h3>
-              <p>Regulatory and cybersecurity alignment for modern enterprise workloads.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="gradient-blob blob-1"></div>
+  <div class="gradient-blob blob-2"></div>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <div class="contact-wrapper">
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email" required />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-        <div class="contact-info">
-          <p><strong>Email:</strong> hr@swaradiant.com</p>
-          <p><strong>Location:</strong> Dallas, Texas, United States</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="container hero-grid">
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h3>SWA Radiant</h3>
-          <p>Enterprise IT solutions driven by security, scaling, and precision engineering.</p>
-        </div>
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4>Contact</h4>
-            <p>Email: <a href="mailto:hr@swaradiant.com">hr@swaradiant.com</a></p>
-            <p>Dallas, Texas, United States</p>
-          </div>
-          <div class="footer-column">
-            <h4>Explore</h4>
-            <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Policy</h4>
-            <ul>
-              <li><a href="#" id="open-privacy">Privacy Policy</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 SWA Radiant. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <div id="privacy-modal" class="modal-overlay">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3>Privacy Policy & Disclaimers</h3>
-        <button class="modal-close" id="close-privacy">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p class="modal-meta">Effective Execution Date: May 2026</p>
+    <div class="hero-content">
         
-        <h4>1. Information Practices</h4>
-        <p>SWA Radiant respects user configuration privacy. We collect standard telemetry data explicitly provided by your browser interfaces to analyze traffic patterns. Any communication submitted via our secure portal (names, emails, corporate messages) is used strictly to process client infrastructure consultations.</p>
-        
-        <h4>2. Technical Disclaimers</h4>
-        <p>The strategic information architecture found across this domain is provided for general evaluation purposes. SWA Radiant provides custom engineering models under formal Master Service Agreements (MSAs). No warranty or technical liability is assumed for deployment strategies executed outside explicit contractual specifications.</p>
-        
-        <h4>3. Local Storage & Caching</h4>
-        <p>This web application utilizes lightweight tracking variables and cache allocations to reduce structural reload latencies. To align your system view with updated enterprise service architectures, feel free to execute an occasional hard browser refresh.</p>
+
+      <div class="hero-badge">
+        IT Consulting • Outsourcing • Digital Engineering
       </div>
+
+      <h1 class="hero-title">
+        Building Scalable Technology Solutions for Modern Businesses
+      </h1>
+
+      <p class="hero-text">
+        Swaradiant is a growing IT consulting and outsourcing partner helping startups and enterprises build reliable,
+        scalable, and cost-efficient digital systems. We focus on engineering excellence, process optimization, and
+        long-term technology partnerships.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn-primary" href="#services">Explore Services</a>
+        <a class="btn-secondary" href="#contact">Get in Touch</a>
+      </div>
+
     </div>
+
+    <div class="hero-visual">
+
+      <div class="glass-card">
+        <!-- PLACEHOLDER -->
+        <img src="./assets/images/hero-glass.png" class="glass-img" />
+
+        <div class="floating-card top">IT Strategy</div>
+        <div class="floating-card middle">Outsourcing Teams</div>
+        <div class="floating-card bottom">Software Delivery</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services section reveal">
+
+  <div class="container">
+
+    <div class="section-title">
+      <span>Our Expertise</span>
+      <h2>Technology & Business Solutions</h2>
+    </div>
+
+    <!-- CORE CONSULTING -->
+    <div class="service-group">
+
+      <h3 class="service-heading">Core Consulting Services</h3>
+
+      <div class="section-image-placeholder">
+        <img src="./assets/images/consulting.png" alt="section-image-placeholder" />
+      </div>
+
+      <div class="services-grid three-col">
+
+        <div class="service-card">
+            <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 21h6M12 17v4M7 9a5 5 0 1 1 10 0c0 3-2 4-2 6H9c0-2-2-3-2-6z"/>
+            </svg>
+            </div>
+          <h4>IT Strategy</h4>
+          <p>Technology roadmap and planning.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 17l6-6 4 4 8-8v6h-2V9l-6 6-4-4-6 6z"/>
+            </svg>
+            </div>
+          <h4>System Design</h4>
+          <p>Scalable architecture solutions.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M2 12h4l3-7 4 14 3-7h6"/>
+            </svg>
+            </div>
+          <h4>Digital Transformation</h4>
+          <p>Modernizing legacy systems.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ENGINEERING -->
+    <div class="service-group">
+
+      <h3 class="service-heading">Engineering & Outsourcing</h3>
+
+      <div class="section-image-placeholder">
+        <img src="./assets/images/engineering.png" alt="section-image-placeholder" />
+      </div>
+
+      <div class="services-grid three-col">
+
+        <div class="service-card">
+          <div class="icon">👨‍💻</div>
+          <h4>Dedicated Teams</h4>
+          <p>Hire remote engineering teams.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🚀</div>
+          <h4>Project Delivery</h4>
+          <p>End-to-end execution support.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🔧</div>
+          <h4>Maintenance</h4>
+          <p>Continuous system support.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="service-group">
+
+      <h3 class="service-heading">Product & Scaling Solutions</h3>
+
+      <div class="section-image-placeholder">
+        <img src="./assets/images/product.png" alt="section-image-placeholder" />
+      </div>
+
+      <div class="services-grid three-col">
+
+        <div class="service-card">
+          <div class="icon">⚡</div>
+          <h4>MVP Development</h4>
+          <p>Rapid product prototyping.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">☁️</div>
+          <h4>Cloud Systems</h4>
+          <p>Scalable cloud architecture.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">📈</div>
+          <h4>Performance Scaling</h4>
+          <p>Optimize system performance.</p>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <script src="js/main.js"></script>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about section reveal">
+
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <!-- IMAGE PLACEHOLDER -->
+      <img src="./assets/images/about.png" alt="about-image" />
+    </div>
+
+    <div class="about-content">
+
+  <span class="mini">About Swaradiant</span>
+
+  <h2>Engineering-Driven IT Consulting Partner</h2>
+
+  <p>
+    Swaradiant is focused on delivering structured engineering solutions for startups and enterprises.
+  </p>
+
+  <p>
+    We specialize in system design, outsourcing models, and scalable digital transformation strategies.
+  </p>
+
+  <p>
+    Our approach blends technical execution with business thinking to ensure long-term impact.
+  </p>
+
+  <div class="about-stats">
+
+    <div>
+      <h3>10+</h3>
+      <p>Projects Conceptualized</p>
+    </div>
+
+    <div>
+      <h3>3+</h3>
+      <p>Core Service Domains</p>
+    </div>
+
+    <div>
+      <h3>100%</h3>
+      <p>Focus on Scalability</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact section reveal">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>Let’s Build Something Great</h2>
+
+      <p>
+        Share your requirement and our team will respond shortly.
+      </p>
+
+      <!-- PROFESSIONAL FORM -->
+      <form class="contact-form" id="contactForm" autocomplete="off">
+
+  <!-- NAME -->
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Full Name"
+    required
+  />
+
+  <!-- EMAIL -->
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Business Email"
+    required
+  />
+
+  <!-- COMPANY (OPTIONAL SAFE TEXT ONLY) -->
+  <input
+    type="text"
+    id="company"
+    name="company"
+    placeholder="Company Name (Optional)"
+  />
+
+  <!-- MESSAGE -->
+  <textarea
+    id="message"
+    name="message"
+    placeholder="Project Description"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn-primary">
+    Submit Request
+  </button>
+
+</form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <!-- LOGO SECTION -->
+    <div class="footer-brand">
+
+      <!-- LOGO PLACEHOLDER -->
+      <div class="footer-logo">
+        <img src="./assets/images/logo.svg" alt="footer-logo" />
+      </div>
+
+      <p>
+        Swaradiant is an IT consulting and outsourcing partner
+        helping businesses build scalable digital systems.
+      </p>
+
+    </div>
+
+    <!-- NAV LINKS -->
+    <div>
+      <h4>Company</h4>
+
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+
+      <a href="#services">IT Consulting</a>
+      <a href="#services">Outsourcing</a>
+      <a href="#services">Software Development</a>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Swaradiant. All rights reserved.
+  </div>
+
+</footer>
+
+<script src="./js/main.js"></script>
+
 </body>
 </html>
