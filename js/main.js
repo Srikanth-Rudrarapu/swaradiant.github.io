@@ -154,3 +154,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Checks if the menu is open, then shuts it
+    if (navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show');
+    }
+  });
+});

@@ -206,14 +206,14 @@ body{
 
 .glass-card{
 
-  height:500px;
+  height:460px;
 
   border-radius:40px;
 
   position:relative;
 
   background:
-    rgba(255,255,255,0.45);
+rgba(255,255,255,0.45);
 
   backdrop-filter:blur(20px);
 
@@ -445,21 +445,9 @@ body{
   border-color: transparent;
 }
 
-/* =========================
-   RESPONSIVE SAFETY
-========================= */
 
-@media (max-width: 992px) {
-  .services-grid.three-col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 600px) {
-  .services-grid.three-col {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* ABOUT */
 
