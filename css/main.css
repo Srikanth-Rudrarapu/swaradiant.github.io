@@ -60,6 +60,7 @@ body{
   border-bottom:
     1px solid rgba(0,0,0,0.05);
 }
+ 
 
 .navbar{
   height:80px;
@@ -69,19 +70,29 @@ body{
   align-items:center;
 }
 
+.logo-link{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  /* font-size:1.8rem;
+  font-weight:700; */
+}
+
 .logo{
   display:flex;
   align-items:center;
   gap:10px;
 
-  font-size:1.8rem;
-  font-weight:700;
+  /* font-size:1.8rem;
+  font-weight:700; */
 }
 
 .logo-img{
   width:180px;
   height:120px;
   object-fit:contain;
+  padding-right: 0%;
 }
 
 .logo span{
@@ -118,6 +129,20 @@ body{
   border-radius:50px;
 
   background:var(--gradient);
+}
+
+.submit-request{
+  padding:15px 28px;
+
+  border-radius:14px;
+  justify-self: center;
+  justify-content: center;
+  width:200px;
+
+  font-weight:600;
+
+  background:var(--gradient);
+  color:white;
 }
 
 /* MOBILE MENU */
@@ -190,6 +215,7 @@ body{
   text-decoration:none;
 
   font-weight:600;
+  /* display:flex; */
 }
 
 .btn-primary{
@@ -201,6 +227,15 @@ body{
   border:2px solid var(--primary);
   color:var(--primary);
 }
+/* .btn-submit{
+  justify-self: center;
+  cursor: pointer;
+  color:white;
+  width:140px;
+  height: 45px;
+  background: var(--gradient);
+  border-radius: 12px;
+} */
 
 /* HERO VISUAL */
 
@@ -228,7 +263,7 @@ rgba(255,255,255,0.45);
   width:100%;
   height:100%;
   object-fit:cover;
-
+  border-radius:16px;
   display:block;
 }
 
@@ -236,7 +271,7 @@ rgba(255,255,255,0.45);
 
   position:absolute;
 
-  background:white;
+  background:rgb(255, 255, 255);
 
   padding:20px 28px;
 
@@ -246,6 +281,7 @@ rgba(255,255,255,0.45);
     0 10px 30px rgba(0,0,0,0.08);
 
   font-weight:600;
+
 }
 
 .top{
@@ -293,6 +329,15 @@ rgba(255,255,255,0.45);
 
   bottom:-100px;
   right:-100px;
+}
+
+.section-span{
+  display:flex;
+  justify-content:center;
+  color:var(--primary);
+  font-weight:600;
+  font-size:25px;
+  margin-bottom:8px;
 }
 
 
@@ -366,13 +411,13 @@ rgba(255,255,255,0.45);
 
   overflow: hidden;
 
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 /* ICON */
 .service-card .icon {
-  width: 42px;
-  height: 42px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 14px;
 }
 

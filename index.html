@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Swaradiant | IT Consulting & Outsourcing</title>
+  <title>Swaradiant</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -20,11 +21,15 @@
 
 <!-- NAV -->
 <header class="header">
-  <div class="container navbar">
-
-    <div class="logo">
+  
+  <div class="container navbar">  
+    <div class="logo" >
+      <a href="#home" class="logo-link">
       <img src="./assets/images/logo.svg" alt="logo" class="logo-img" />
+      </a>
     </div>
+
+    
 
     <nav>
       <ul class="nav-links" id="navLinks">
@@ -90,11 +95,14 @@
 
 <!-- SERVICES -->
 <section id="services" class="services section reveal">
+  <!-- <section id="services" class="reveal"> -->
+    <span class="section-span">Our Expertise</span>
+      
 
   <div class="container">
-
+    <!-- <span class="section-span">Our Expertise</span> -->
+    <!-- <span class="mini">Our Expertise</span> -->
     <div class="section-title">
-      <span>Our Expertise</span>
       <h2>Technology & Business Solutions</h2>
     </div>
 
@@ -104,39 +112,42 @@
       <h3 class="service-heading">Core Consulting Services</h3>
 
       <div class="section-image-placeholder">
-        <img src="./assets/images/consulting.png" alt="section-image-placeholder" />
+        <img src="./assets/images/technology.jpg" alt="section-image-placeholder" />
       </div>
 
       <div class="services-grid three-col">
 
         <div class="service-card">
             <div class="icon">
-            <svg viewBox="0 0 24 24">
+            <!-- <svg viewBox="0 0 24 24">
                 <path d="M9 21h6M12 17v4M7 9a5 5 0 1 1 10 0c0 3-2 4-2 6H9c0-2-2-3-2-6z"/>
-            </svg>
+            </svg> -->
+            <img src="./assets/icons/strategy.svg" alt="strategy-icon" />
             </div>
           <h4>IT Strategy</h4>
-          <p>Technology roadmap and planning.</p>
+          <p>We align your technical capabilities directly with long-term business goals. Our consultants analyze your current infrastructure to design forward-looking technology roadmaps, mitigate deployment risks, and optimize your overall IT spend for predictable, scalable growth.</p>
         </div>
 
         <div class="service-card">
             <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M3 17l6-6 4 4 8-8v6h-2V9l-6 6-4-4-6 6z"/>
-            </svg>
+              <!-- <svg viewBox="0 0 24 24">
+                  <path d="M3 17l6-6 4 4 8-8v6h-2V9l-6 6-4-4-6 6z"/>
+              </svg> -->
+              <img src="./assets/icons/systemDesign.svg" alt="system-design-icon" />
             </div>
           <h4>System Design</h4>
-          <p>Scalable architecture solutions.</p>
+          <p>Building resilient foundations for modern enterprise demands. We engineer high-performance, fault-tolerant system architectures that ensure maximum data integrity, zero-trust security compliance, and seamless cross-platform interoperability across your entire organizational ecosystem.</p>
         </div>
 
         <div class="service-card">
             <div class="icon">
-            <svg viewBox="0 0 24 24">
+            <!-- <svg viewBox="0 0 24 24">
                 <path d="M2 12h4l3-7 4 14 3-7h6"/>
-            </svg>
+            </svg> -->
+            <img src="./assets/icons/digitalTransformation.svg" alt="digital-transformation-icon" />
             </div>
           <h4>Digital Transformation</h4>
-          <p>Modernizing legacy systems.</p>
+          <p>Breathe new life into aging systems. We help companies safely transition from brittle, monolithic legacy setups to agile, API-driven workflows—minimizing business disruption while unlocking massive gains in operational speed, team agility, and customer experience.</p>
         </div>
 
       </div>
@@ -155,21 +166,30 @@
       <div class="services-grid three-col">
 
         <div class="service-card">
-          <div class="icon">👨‍💻</div>
+          <!-- <div class="icon">👨‍💻</div> -->
+          <div class="icon">
+            <img src="./assets/icons/team.svg" alt="engineer-icon" />
+          </div>
           <h4>Dedicated Teams</h4>
-          <p>Hire remote engineering teams.</p>
+          <p>Instantly scale your delivery capabilities with remote, cross-functional engineering teams. We supply highly specialized developers, QA engineers, and agile scrum masters who integrate seamlessly into your internal workflows, operating completely under your direction with zero overhead.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">🚀</div>
+          <!-- <div class="icon">🚀</div> -->
+          <div class="icon">
+            <img src="./assets/icons/projectDelivery.svg" alt="project-icon" />
+          </div>
           <h4>Project Delivery</h4>
-          <p>End-to-end execution support.</p>
+          <p>Turn complex product concepts into market-ready software assets. From initial business requirements gathering and rapid system prototyping to full-scale deployment and launch, our delivery methodology ensures your software projects are completed on time and strictly on budget.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">🔧</div>
+          <!-- <div class="icon">🔧</div> -->
+          <div class="icon">
+            <img src="./assets/icons/maintenance.svg" alt="maintenance-icon" />
+          </div>
           <h4>Maintenance</h4>
-          <p>Continuous system support.</p>
+          <p>Ensure continuous uptime andoperational reliability. Our engineering teams provide dedicated post-launch support, real-time error monitoring, infrastructure patches, and routine version upgrades so your core business platforms run flawlessly around the clock.</p>
         </div>
 
       </div>
@@ -182,27 +202,36 @@
       <h3 class="service-heading">Product & Scaling Solutions</h3>
 
       <div class="section-image-placeholder">
-        <img src="./assets/images/product.png" alt="section-image-placeholder" />
+        <img src="./assets/images/product.jpg" alt="section-image-placeholder" />
       </div>
 
       <div class="services-grid three-col">
 
         <div class="service-card">
-          <div class="icon">⚡</div>
+          <!-- <div class="icon">⚡</div> -->
+          <div class="icon">
+            <img src="./assets/icons/mvp.svg" alt="mvp-icon" />
+          </div>
           <h4>MVP Development</h4>
-          <p>Rapid product prototyping.</p>
+          <p>Accelerate your time-to-market. We help startups and innovation teams design and launch high-fidelity Minimum Viable Products (MVPs) in record time, allowing you to validate core hypotheses, capture early user feedback, and secure investor funding with minimal capital risk.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">☁️</div>
+          <!-- <div class="icon">☁️</div> -->
+          <div class="icon">
+            <img src="./assets/icons/cloud.svg" alt="cloud-icon" />
+          </div>
           <h4>Cloud Systems</h4>
-          <p>Scalable cloud architecture.</p>
+          <p>Migrate, manage, and optimize your infrastructure using secure, cloud-native deployments. We build dynamic, self-healing environments across AWS, Azure, and Google Cloud, utilizing infrastructure-as-code (IaC) and automated CI/CD pipelines to slash deployment times.</p>
         </div>
 
         <div class="service-card">
-          <div class="icon">📈</div>
+          <!-- <div class="icon">📈</div> -->
+          <div class="icon">
+            <img src="./assets/icons/performance.svg" alt="performance-icon" />
+          </div>
           <h4>Performance Scaling</h4>
-          <p>Optimize system performance.</p>
+          <p>Eliminate application bottlenecks before they impact your bottom line. Our performance experts audit your software stack, refactor database queries, implement advanced caching strategies, and configure auto-scaling rules to ensure your systems handle heavy user traffic surges smoothly.</p>
         </div>
 
       </div>
@@ -215,7 +244,9 @@
 
 <!-- ABOUT -->
 <section id="about" class="about section reveal">
-
+  <!-- <section id="about" class="reveal"> -->
+  <!-- <span class="section-span">About Swaradiant</span> --> 
+<span class="section-span">About Swaradiant</span>
   <div class="container about-grid">
 
     <div class="about-image">
@@ -225,7 +256,8 @@
 
     <div class="about-content">
 
-  <span class="mini">About Swaradiant</span>
+      <!-- <span class="mini">About Swaradiant</span> -->
+  
 
   <h2>Engineering-Driven IT Consulting Partner</h2>
 
@@ -266,7 +298,6 @@
 
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact section reveal">
 
   <div class="container">
@@ -279,59 +310,78 @@
         Share your requirement and our team will respond shortly.
       </p>
 
-      <!-- PROFESSIONAL FORM -->
-      <form class="contact-form" id="contactForm" autocomplete="off">
+      <form
+        class="contact-form"
+        id="contactForm"
+        autocomplete="off"
+        novalidate
+      >
 
-  <!-- NAME -->
-  <input
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Full Name"
-    required
-  />
+        <!-- NAME -->
+        <!-- <div class="form-group"> -->
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            maxlength="50"
+            required
+          />
+        <!-- </div> -->
 
-  <!-- EMAIL -->
-  <input
-    type="email"
-    id="email"
-    name="email"
-    placeholder="Business Email"
-    required
-  />
+        <!-- EMAIL -->
+        <!-- <div class="form-group"> -->
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            maxlength="100"
+            required
+          />
+        <!-- </div> -->
 
-  <!-- COMPANY (OPTIONAL SAFE TEXT ONLY) -->
-  <input
-    type="text"
-    id="company"
-    name="company"
-    placeholder="Company Name (Optional)"
-  />
+        <!-- COMPANY -->
+        <!-- <div class="form-group"> -->
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Company Name (Optional)"
+            maxlength="100"
+          />
+        <!-- </div> -->
 
-  <!-- MESSAGE -->
-  <textarea
-    id="message"
-    name="message"
-    placeholder="Project Description"
-    required
-  ></textarea>
+        <!-- MESSAGE -->
+        <!-- <div class="form-group"> -->
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Tell us about your requirement"
+            maxlength="1000"
+            required
+          ></textarea>
+        <!-- </div> -->
 
-  <button type="submit" class="btn-primary">
-    Submit Request
-  </button>
+        <!-- STATUS -->
+        <p id="formStatus" class="form-status"></p> 
 
-</form>
+        <!-- BUTTON -->
+        <button type="submit" class="submit-request" id="submitBtn">
+          Send Message
+        </button>
 
-    </div>
+      </form>
 
-    <!-- CONTACT INFO -->
+      <!-- CONTACT INFO -->
   <div class="contact-info">
 
     <div class="info-item">
       <h4>📍 Address</h4>
       <p>
         Swaradiant Technologies<br>
-        Dallas, TX, United States
+        10633 grayhead dr, Frisco, TX 75035
       </p>
     </div>
 
@@ -345,14 +395,15 @@
     <div class="info-item">
       <h4>📞 Phone</h4>
       <p>
-        <a href="tel:+1234567890">+1 (234) 567-890</a>
+        <a href="tel:+1 (971) 340-6686">+1 (971) 340-6686</a>
       </p>
     </div>
 
   </div>
 
-  </div>
+    </div>
 
+  </div>
 
 </section>
 
@@ -393,12 +444,7 @@
       <a href="#services">Software Development</a>
     </div>
 
-    <div>
-      <h4>Legal</h4>
-
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
+  
 
   </div>
 

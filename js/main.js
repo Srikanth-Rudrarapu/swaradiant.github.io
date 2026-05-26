@@ -31,8 +31,6 @@ window.addEventListener("scroll", () => {
 
 
 
-// GSAP HERO ANIMATION
-
 gsap.from(".hero-badge",{
   y:30,
   opacity:0,
@@ -52,6 +50,7 @@ gsap.from(".hero-text",{
   duration:1,
   delay:0.4
 });
+
 
 gsap.from(".hero-buttons",{
   y:40,
@@ -79,7 +78,7 @@ const observer = new IntersectionObserver((entries)=>{
   });
 
 },{
-  threshold:0.2
+  threshold:0.1
 });
 
 document
@@ -87,59 +86,63 @@ document
   .forEach((el)=>observer.observe(el));
 
 
-const form = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", () => {
 
-const nameRegex = /^[A-Za-z\s'-]{2,50}$/;
-const emailRegex = /^[a-z0-9]+([._%+-]?[a-z0-9]+)*@[a-z0-9-]+\.[a-z]{2,}$/;
-const safeTextRegex = /^[A-Za-z0-9\s.,'-]{20,1000}$/;
+  const API_URL = "https://op6nup71de.execute-api.us-east-1.amazonaws.com/contact";
 
-function sanitize(input) {
-  return input
-    .replace(/</g, "")
-    .replace(/>/g, "")
-    .replace(/{/g, "")
-    .replace(/}/g, "")
-    .replace(/\[/g, "")
-    .replace(/\]/g, "")
-    .trim();
-}
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  if (!form || !submitBtn) return;
 
-  const name = sanitize(document.getElementById("name").value);
-  const email = sanitize(document.getElementById("email").value.toLowerCase());
-  const company = sanitize(document.getElementById("company").value);
-  const message = sanitize(document.getElementById("message").value);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  if (!nameRegex.test(name)) {
-    alert("Invalid name format");
-    return;
-  }
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const company = document.getElementById("company").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-  if (!emailRegex.test(email)) {
-    alert("Invalid email format");
-    return;
-  }
-
-  if (!safeTextRegex.test(message)) {
-    alert("Message must be 20–1000 safe characters only");
-    return;
-  }
-
-  const dangerPatterns = [/script/i, /select/i, /drop/i, /insert/i];
-
-  for (let pattern of dangerPatterns) {
-    if (pattern.test(name + email + message)) {
-      alert("Unsafe input detected");
+    if (!name || !email || !message) {
+      alert("Please fill all required fields");
       return;
     }
-  }
 
-  console.log({ name, email, company, message });
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
 
-  alert("Form submitted successfully!");
-  form.reset();
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          message
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        form.reset();
+      } else {
+        alert(data.error || "Failed to send message");
+      }
+
+    } catch (err) {
+      console.error(err);
+      alert("Network error. Please try again.");
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Send Message";
+  });
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {
